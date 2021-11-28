@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Jawaban</title>
+</head>
+<body>
+    
+    <div id="app">
+
+        <div>
+            <label>Skor</label>
+            <input type="number" v-model="skor">
+        </div>
+
+        <div>
+            <label>Kunci Jawaban</label>
+            <input v-model="kunciJawaban" maxlength="10">
+            <em>{{ kunciJawaban.length }} dari {{ JumlahSoal }}</em>
+        </div>
+
+        <div>
+            <label>Jawaban Siswa</label>
+            <input v-model="JawabanSiswa" maxlength="10">
+            <em>{{ JawabanSiswa.length }} dari {{ JumlahSoal }}</em>
+        </div>
+
+        <h1>Hasil</h1>
+        <h4>Benar : {{hasil.benar}}</h4>
+        <h4>Salah : {{hasil.salah}}</h4>
+        <h4>Nilai : {{hasil.nilai}}</h4>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
