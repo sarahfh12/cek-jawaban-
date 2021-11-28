@@ -5,33 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cek Jawaban</title>
+    <style>
+        body {
+            background-color: #fafafa;
+            color: #2a1e30;
+          }
+    
+          td {
+          color: #2a1e30;
+          }
+
+          .form-control,
+          .form-control:focus {
+            background-color: transparent;
+            color: #fafafa;
+            font-size: 22px;
+          }
+          a {
+            color: inherit;
+            text-decoration: underline;
+          }
+          a:hover {
+            color: #fafafa;
+          }
+      </style>
 </head>
 <body>
     
     <div id="app">
-
-        <div>
+        <div class="container">
+        <div class="row">
+            <header class="mt-5 mb-5 text-center">
+                <h1 align="center">CEK JAWABAN</h1>
+              </header>
+        <table align="center">
+        <div class="col-md-6 offset-md-3">
+        <tr>
+            <td align="center" bgcolor="oraye" width="10%" rowspan="2">
             <label>Skor</label>
-            <input type="number" v-model="skor">
+            </td>
+            <td width="10%" rowspan="2">
+            <input type="number" v-model="skor" placeholder="isi skor">
+            </td>
+        
         </div>
-
-        <div>
-            <label>Kunci Jawaban</label>
-            <input v-model="kunciJawaban" maxlength="10">
-            <em>{{ kunciJawaban.length }} dari {{ JumlahSoal }}</em>
+        <div id="oke" class="mt-4 mb-4">
+        
+            <td bgcolor="#33ff77" width="10%" rowspan="1" colspan="4">
+            <label>Kunci Jawaban</label></td>
+            <td width="10%">
+            <input v-model="kunciJawaban" maxlength="10" placeholder="isi disini">
+            <em>{{ kunciJawaban.length }} dari {{ JumlahSoal }}</em></td>
+        </tr>
         </div>
-
-        <div>
-            <label>Jawaban Siswa</label>
-            <input v-model="JawabanSiswa" maxlength="10">
-            <em>{{ JawabanSiswa.length }} dari {{ JumlahSoal }}</em>
+        
+        <div class="mt-4 mb-4">
+        
+        <tr>
+            <td bgcolor="#ffff66" width="10%" rowspan="1" colspan="4">            
+            <label>Jawaban Siswa</label></td>
+            <td width="10%">
+            <input v-model="JawabanSiswa" maxlength="10" placeholder="tuliskan jawabanmu">
+            <em>{{ JawabanSiswa.length }} dari {{ JumlahSoal }}</em></td>
+        </tr>
+        
         </div>
-
-        <h1>Hasil</h1>
-        <h4>Benar : {{hasil.benar}}</h4>
-        <h4>Salah : {{hasil.salah}}</h4>
-        <h4>Nilai : {{hasil.nilai}}</h4>
-
+        
+            <td bgcolor="silver" width="10%">
+            <h1 align="center">Hasil</h1></td>
+            <td width="10%">
+            <h4>Benar : {{hasil.benar}}</h4>
+            <h4>Salah : {{hasil.salah}}</h4>
+            <h4>Nilai : {{hasil.nilai}}</h4></td>
+        </tr>
+    </table>
+    </div>
+    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
